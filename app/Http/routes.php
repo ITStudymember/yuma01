@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+//新しい記事の作成画面
+Route::get('/new_blog', function(){
+    return view('new_blog');
+});
