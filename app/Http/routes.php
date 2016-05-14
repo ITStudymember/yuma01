@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index');
 Route::get('/new_blog', function(){
     return view('new_blog');
 });
+
+//記事の投稿
+Route::post('/new_blog', 'BlogsController@postArticle');
