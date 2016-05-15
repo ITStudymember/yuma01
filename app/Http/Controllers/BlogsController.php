@@ -39,4 +39,20 @@ class BlogsController extends Controller
         
         return $articles;
     }
+
+
+    /**
+     * view article detail
+     * 
+     * @param $id
+     * @return mixed
+     */
+    public function articleDetail($id)
+    {
+        $articleModel = new Article();
+        
+        $article = $articleModel->getSingleArticle($id);
+        
+        return view('article_detail', compact('article'));
+    }
 }
