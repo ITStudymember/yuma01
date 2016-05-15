@@ -9,7 +9,6 @@ use App\Http\Requests;
 
 class BlogsController extends Controller
 {
-    //
     /**
      * 新しい記事の登録
      *
@@ -27,5 +26,33 @@ class BlogsController extends Controller
         $article->save();
 
         return redirect('/');
+    }
+
+    /**
+     * get all article
+     * 
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public static function getAllArticles()
+    {
+        $articles = Article::all();
+        
+        return $articles;
+    }
+
+
+    /**
+     * view article detail
+     * 
+     * @param $id
+     * @return mixed
+     */
+    public function articleDetail($id)
+    {
+        $articleModel = new Article();
+        
+        $article = $articleModel->getSingleArticle($id);
+        
+        return view('article_detail', compact('article'));
     }
 }

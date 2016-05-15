@@ -5,9 +5,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div>
-                @foreach($articles as $article)
-                    <p><a href="/{{ $article->id }}">{{ $article->title }}</a></p>
-                @endforeach
+                <p>{{ $article->title }}</p>
+            </div>
+            <div>
+                {{ $article->body }}
             </div>
         </div>
     </div>
