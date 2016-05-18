@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -26,6 +26,6 @@ class HomeController extends Controller
     {
         $articles = BlogsController::getallArticles();
 
-        return view('home')->with('articles', $articles);
+        return view('welcome')->with('articles', $articles);
     }
 }
