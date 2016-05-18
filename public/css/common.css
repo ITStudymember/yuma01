@@ -3,3 +3,7 @@
 html {
     width: 100%;
 }
+
+.nav-bar a {
+    text-decoration: none;
+}
