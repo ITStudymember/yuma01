@@ -4,6 +4,32 @@ html {
     width: 100%;
 }
 
+.nav-bar {
+    border-bottom: solid;
+    overflow: auto;
+    border-width: 1px;
+    margin-bottom: 2%;
+}
+
+.logo {
+    width: 10%;
+    float: left;
+}
+
 .nav-bar a {
     text-decoration: none;
+}
+
+.nav-bar ul {
+    list-style: none;
+}
+
+.nav-items-left li {
+    float: left;
+    margin-right: 2%;
+}
+
+.nav-items-right li {
+    float: right;
+    margin-right: 2%
 }

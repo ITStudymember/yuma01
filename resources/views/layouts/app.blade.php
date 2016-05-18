@@ -10,15 +10,15 @@
 <body id="app-layout">
     <nav class="nav-bar">
         <div>
-            <div>
+            <div class="logo">
                 <a href="{{ url('/') }}">ITStudy</a>
             </div>
             <div>
-                <ul>
+                <ul class="nav-items-left">
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ url('/new_blog') }}">ブログを書く</a></li>
                 </ul>
-                <ul>
+                <ul class="nav-items-right">
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
