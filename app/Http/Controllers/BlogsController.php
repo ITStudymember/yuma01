@@ -18,10 +18,19 @@ class BlogsController extends Controller
      */
     public function postArticle(Request $request)
     {
+//        dd($request);
+        //画像のアップロード
+        $articleImgName = '';
+        if($request->file('article_img') != null){
+            $articleImgName = ImagesController::uploadImage($request);
+        }
+        
+
         $article = new Article();
 
         $article->title = $request->title;
         $article->body = $request->body;
+        $article->img_path = $articleImgName;
 
         $article->save();
 
@@ -43,7 +52,7 @@ class BlogsController extends Controller
 
     /**
      * view article detail
-     * 
+     *
      * @param $id
      * @return mixed
      */
@@ -55,4 +64,5 @@ class BlogsController extends Controller
         
         return view('article_detail', compact('article'));
     }
+
 }
