@@ -5,15 +5,56 @@ html {
 }
 
 .nav-bar {
-    border-bottom: solid;
-    overflow: auto;
+
+}
+
+
+
+.nav-bar {
+    /*border-bottom: solid;*/
+    /*overflow: auto;*/
     border-width: 1px;
     margin-bottom: 2%;
+    position: relative;
+    overflow: hidden;
+    /*padding: 80px 0;*/
+}
+
+.nav-bar:before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 120%;
+    height: 95%;
+    margin: 3% -10% 0;
+    background: #0489B1;
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.nav-bar--inner {
+    box-sizing: boder-box;
+    width: 100%;
+    /*max-width: 640px;*/
+    height: 100%;
+    /*margin: 0 auto;*/
+    /*padding: 30px 0;*/
+    color: #fff;
+    text-align: center;
 }
 
 .logo {
-    width: 10%;
     float: left;
+}
+
+.logo img {
+    height: 50px;
 }
 
 .nav-bar a {

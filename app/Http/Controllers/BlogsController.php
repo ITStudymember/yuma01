@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Http\Request;
-
+use GrahamCampbell\Markdown\Facades\Markdown;
 use App\Http\Requests;
 
 class BlogsController extends Controller
@@ -24,12 +24,13 @@ class BlogsController extends Controller
         if($request->file('article_img') != null){
             $articleImgName = ImagesController::uploadImage($request);
         }
-        
 
+        $convertBody = Markdown::convertToHtml($request->body);
+//dd($convertBody);
         $article = new Article();
 
         $article->title = $request->title;
-        $article->body = $request->body;
+        $article->body = $convertBody;
         $article->img_path = $articleImgName;
 
         $article->save();
