@@ -17,6 +17,10 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/admin/login', function(){
+   return view('auth.login');
+});
+
 //新しい記事の作成画面
 Route::get('/new_blog', function(){
     return view('new_blog');
